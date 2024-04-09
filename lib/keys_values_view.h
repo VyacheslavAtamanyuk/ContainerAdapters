@@ -33,7 +33,7 @@ public:
     KeysValuesIterator operator--(int) {
         KeysValuesIterator temp = *this;
         --it_;
-        return *this;
+        return temp;
     }
 
     return_type operator*() const requires HasKey {
