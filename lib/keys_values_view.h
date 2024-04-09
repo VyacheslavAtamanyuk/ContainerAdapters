@@ -21,7 +21,7 @@ public:
 
     KeysValuesIterator operator++(int) {
         KeysValuesIterator temp = *this;
-        ++it_;
+        ++(*this);
         return temp;
     }
 
@@ -32,7 +32,7 @@ public:
 
     KeysValuesIterator operator--(int) {
         KeysValuesIterator temp = *this;
-        --it_;
+        --(*this);
         return temp;
     }
 
