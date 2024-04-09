@@ -32,7 +32,7 @@ public:
         return temp;
     }
 
-    FilterIterator<Iterator, Functor> operator--() requires std::bidirectional_iterator<Iterator> {
+    FilterIterator<Iterator, Functor>& operator--() requires std::bidirectional_iterator<Iterator> {
         auto finish = begin_;
         --finish;
 
