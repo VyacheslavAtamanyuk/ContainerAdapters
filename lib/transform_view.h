@@ -21,7 +21,7 @@ public:
 
     TransformIterator operator++(int) {
         TransformIterator temp = *this;
-        ++it_;
+        ++(*this);
         return temp;
     }
 
@@ -32,7 +32,7 @@ public:
 
     TransformIterator operator--(int) requires std::bidirectional_iterator<Iterator> {
         TransformIterator temp = *this;
-        --it_;
+        --(*this);
         return temp;
     }
 
