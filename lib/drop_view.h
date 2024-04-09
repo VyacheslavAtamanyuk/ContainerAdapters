@@ -9,11 +9,11 @@ public:
 
     drop_view(Iterator begin, Iterator end, size_t n): begin_(begin), end_(end) {
         if constexpr(std::random_access_iterator<Iterator>) {
-            begin_ += n;
+            begin_ += ((n > std::distance(begin_, end_)) ? std::distance(begin_, end_): n);
         } else {
             size_t counter = 0;
 
-            while (counter < n) {
+            while (begin_ != end_ && counter < n) {
                 ++begin_;
                 ++counter;
             }

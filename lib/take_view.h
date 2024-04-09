@@ -12,9 +12,9 @@ public:
         size_t counter = 0;
 
         if constexpr(std::random_access_iterator<Iterator>) {
-            temp += n;
+            temp += ((n > std::distance(begin_, end_)) ? std::distance(begin_, end_): n);
         } else {
-            while (counter < n) {
+            while (temp != end_ && counter < n) {
                 ++temp;
                 ++counter;
             }
